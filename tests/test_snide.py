@@ -1,12 +1,37 @@
 from . import BaseTestCase
 
-from snide import snide
+from snide.models import Deck, Slide 
 
 
-class TestSnide(BaseTestCase):
+class TestDeck(BaseTestCase):
 
-    def test_something(self):
+    def setUp(self):
+        self.deck_text = ('# first slide'
+                          '---'
+                          '# second slide').strip()
+
+        self.expected_deck = Deck('foo', self.deck_text)
+        self.expected_deck.slides = [
+            Slide('# first slide'),
+            Slide('# second slide')
+        ]
+
+    def test_deck(self):
         self.assertEquals(
-            'Hello World!',
-            snide(),
+            self.expected_deck.to_json(),
+            Deck('foo', self.deck_text).to_json()
         )
+
+
+class TestSlide(BaseTestCase):
+
+    def test_slide(self):
+        pass
+
+    def test_slide_parse(self):
+        pass
+
+    def test_slide_render(self):
+        pass
+
+
