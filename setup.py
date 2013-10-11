@@ -13,6 +13,7 @@ setup(
     package_dir={'snide': 'snide'},
     include_package_data=True,
     install_requires=[
+        'markdown2 < 3.0.0',
     ],
     test_suite='nose.collector',
     license=open('LICENSE').read(),
