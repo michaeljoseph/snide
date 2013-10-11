@@ -18,8 +18,8 @@ class TestDeck(BaseTestCase):
 
     def test_deck(self):
         self.assertEquals(
-            self.expected_deck.to_json(),
-            Deck('foo', self.deck_text).to_json()
+            self.expected_deck.json,
+            Deck('foo', self.deck_text).json
         )
 
 
@@ -32,8 +32,8 @@ class TestSlide(BaseTestCase):
 
         slide_text = '# first slide\n\n- and\n- then\n- this'
         self.assertEquals(
-            self.expected_slide.to_json(),
-            Slide(slide_text).to_json()
+            self.expected_slide.json,
+            Slide(self.slide_text).json
         )
 
         pass

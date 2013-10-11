@@ -11,10 +11,11 @@ class Deck(object):
         for slide in text.split('---'):
             self.slides.append(Slide(slide))
 
-    def to_json(self):
+    @property
+    def json(self):
         return {
             'title': self.title,
-            'slides': [slide.to_json() for slide in self.slides],
+            'slides': [slide.json for slide in self.slides],
         }
 
 
@@ -34,7 +35,8 @@ class Slide(object):
 
         }
 
-    def to_json(self):
+    @property
+    def json(self):
         return {
             'text': self.markdown,
             'html': self.html,
