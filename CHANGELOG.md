@@ -1,5 +1,11 @@
 # [Changelog](https://github.com/michaeljoseph/snide/releases)
 
+## [0.1.0](https://github.com/michaeljoseph/snide/compare/0.0.2...0.1.0)
+
+* [70fd099](https://github.com/michaeljoseph/snide/commit/70fd099) We require markdown2
+* [6ce971d](https://github.com/michaeljoseph/snide/commit/6ce971d) Fix bullet markup
+* [0f80712](https://github.com/michaeljoseph/snide/commit/0f80712) Fix sentences and example
+
 ## [0.0.2](https://github.com/michaeljoseph/snide/compare/0.0.1...0.0.2)
 
 * [a532008](https://github.com/michaeljoseph/snide/commit/a532008) Test complete slide and fix off-by-one bug
