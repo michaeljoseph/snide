@@ -1,3 +1,2 @@
 [run]
-omit = *virtualenv*
-
+omit = *virtualenv*, *pypy*
