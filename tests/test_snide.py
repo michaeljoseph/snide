@@ -25,10 +25,17 @@ class TestDeck(BaseTestCase):
 
 class TestSlide(BaseTestCase):
 
-    def test_slide(self):
-        pass
+    def setUp(self):
+        self.expected_slide = Slide('# first slide\n\n- and\n- then\n- this')
 
-    def test_slide_parse(self):
+    def test_slide(self):
+
+        slide_text = '# first slide\n\n- and\n- then\n- this'
+        self.assertEquals(
+            self.expected_slide.to_json(),
+            Slide(slide_text).to_json()
+        )
+
         pass
 
     def test_slide_render(self):

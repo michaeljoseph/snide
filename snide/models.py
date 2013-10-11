@@ -41,7 +41,3 @@ class Slide(object):
             'config': self.config,
         }
 
-
-def parse_slide(slide):
-    slide = Slide(slide)
-    return slide
