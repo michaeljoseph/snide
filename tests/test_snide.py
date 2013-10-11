@@ -27,44 +27,92 @@ class TestDeck(BaseTestCase):
 class TestSlide(BaseTestCase):
 
     def setUp(self):
-        self.slide_text = '# first slide\n\n- and\n- then\n- this'
-        self.expected_slide = Slide('# first slide\n\n- and\n- then\n- this')
+        self.slide_text = (
+            '# first slide\n'
+            '\n'
+            '- and\n'
+            '- then\n'
+            '- this'
+        )
+        self.slide = Slide(self.slide_text)
 
-        self.notes_slide_text = ('# first point\n'
-                                 '# second point\n'
-                                 '???\n'
-                                 '# some notes\n').strip()
+        self.config_slide_text = (
+            'class:inverse\n'
+            'transition:down\n'
+            '# first point\n'
+            '# second point\n'
+        ).strip()
+        self.config_slide = Slide(self.config_slide_text)
 
-        self.config_slide_text = ('class:inverse\n'
-                                  'transition:down\n'
-                                  '# first point\n'
-                                  '# second point\n').strip()
+        self.notes_slide_text = (
+            '# first point\n'
+            '# second point\n'
+            '???\n'
+            '# some notes\n'
+        ).strip()
+        self.notes_slide = Slide(self.notes_slide_text)
+
+        self.complete_slide_text = (
+            'class:inverse\n'
+            'transition:down\n'
+            '# first point\n'
+            '# second point\n'
+            '???\n'
+            '# some notes\n'
+        ).strip()
+        self.complete_slide = Slide(self.complete_slide_text)
 
     def test_slide(self):
         self.assertEquals(
-            self.expected_slide.json,
+            self.slide.json,
             Slide(self.slide_text).json
         )
 
     def test_slide_config(self):
         self.assertEquals(
             {'class': 'inverse', 'transition': 'down'},
-            Slide(self.config_slide_text).config,
+            self.config_slide.config,
         )
 
     def test_slide_config_removed_from_text(self):
         self.assertEquals(
             ['# first point', '# second point'],
-            Slide(self.config_slide_text).text,
+            self.config_slide.text,
         )
 
     def test_slide_notes(self):
-        slide = Slide(self.notes_slide_text)
         self.assertEquals(
             ['# some notes'],
-            slide.notes,
+            self.notes_slide.notes,
         )
-	self.assertEquals(
-            '<h1>some notes</h1>',
-            slide.notes_html,
+        self.assertEquals(
+            ['# first point', '# second point'],
+            self.notes_slide.slide,
+        )
+
+    def test_slide_note_marker_removed(self):
+        self.assertTrue('???' not in self.notes_slide.config)
+        self.assertTrue('???' not in self.notes_slide.slide)
+        self.assertTrue('???' not in self.notes_slide.notes)
+
+    def test_slide_notes_html(self):
+        self.assertEquals(
+            '<h1>some notes</h1>\n',
+            self.notes_slide.notes_html,
+        )
+
+    def test_complete_slide(self):
+        self.assertEquals(
+            {'class': 'inverse', 'transition': 'down'},
+            self.complete_slide.config,
+        )
+
+        self.assertEquals(
+            ['# first point', '# second point'],
+            self.complete_slide.slide,
+        )
+
+        self.assertEquals(
+            ['# some notes'],
+            self.complete_slide.notes
         )

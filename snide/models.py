@@ -62,7 +62,7 @@ class Slide(object):
         if self.text.count('???'):
             position = self.text.index('???')
             self.slide, self.notes = (
-                self.text[0:position - 1],
+                self.text[0:position],
                 self.text[position + 1:len(self.text)]
             )
         else:
