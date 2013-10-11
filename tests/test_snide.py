@@ -59,7 +59,12 @@ class TestSlide(BaseTestCase):
         )
 
     def test_slide_notes(self):
+        slide = Slide(self.notes_slide_text)
         self.assertEquals(
             ['# some notes'],
-            Slide(self.notes_slide_text).notes,
+            slide.notes,
+        )
+	self.assertEquals(
+            '<h1>some notes</h1>',
+            slide.notes_html,
         )
