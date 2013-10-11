@@ -53,7 +53,7 @@ class Slide(object):
             if pattern.match(line):
                 self.config.update(
                     dict(pattern.findall(line))
-                ) 
+                )
             else:
                 text.append(line)
 
@@ -61,7 +61,10 @@ class Slide(object):
         self.text = text
         if self.text.count('???'):
             position = self.text.index('???')
-            self.slide, self.notes = self.text[0 : position-1], self.text[position + 1 : len(self.text)]
+            self.slide, self.notes = (
+                self.text[0:position-1],
+                self.text[position + 1:len(self.text)]
+            )
         else:
             self.slide = self.text
 
@@ -75,4 +78,3 @@ class Slide(object):
             'notes': self.notes,
             'notes_html': self.notes_html,
         }
-

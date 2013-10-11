@@ -1,6 +1,6 @@
 from . import BaseTestCase
 
-from snide.models import Deck, Slide 
+from snide.models import Deck, Slide
 
 
 class TestDeck(BaseTestCase):
@@ -63,4 +63,3 @@ class TestSlide(BaseTestCase):
             ['# some notes'],
             Slide(self.notes_slide_text).notes,
         )
-
