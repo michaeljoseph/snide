@@ -9,14 +9,32 @@
 
 Snide: a remark.js parser in python
 
-* features
-* and stuff 
+* pure Python slightly modified Markdown slide format parser 
+    * `---` is a slide boundary
+    # arbitrary `key: value` slide configuration with defaults (e.g. `transition`)
+    # `???` marks speaker notes
 
 ## Usage
 
 Install `snide`:
 
     pip install snide
+
+Use snide in your code to parse a slide markup document:
+
+```python
+    from snide import Deck, parse_deck
+
+    deck = parse_deck
+```
+
+### CLI
+
+Minimal cli to parse and display deck statistics and meta information
+
+    snide my_slides.md
+    ....
+
 
 ## Documentation
 
