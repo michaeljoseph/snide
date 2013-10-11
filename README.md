@@ -11,8 +11,8 @@ Snide: a remark.js parser in python
 
 * A parser that recognises a slightly modified Markdown slide format parser (todo: ref remarkjs)
     * `---` is a slide boundary
-    # arbitrary `key: value` slide configuration
-    # `???` for speaker notes
+    * arbitrary `key: value` slide configuration
+    * `???` for speaker notes
 
 ## Usage
 
