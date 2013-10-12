@@ -1,5 +1,10 @@
 # [Changelog](https://github.com/michaeljoseph/snide/releases)
 
+## [0.2.0](https://github.com/michaeljoseph/snide/compare/0.1.0...0.2.0)
+
+* [73961d0](https://github.com/michaeljoseph/snide/commit/73961d0) Read doc string
+* [f3f738e](https://github.com/michaeljoseph/snide/commit/f3f738e) Read metadata and improve public api
+
 ## [0.1.0](https://github.com/michaeljoseph/snide/compare/0.0.2...0.1.0)
 
 * [70fd099](https://github.com/michaeljoseph/snide/commit/70fd099) We require markdown2
