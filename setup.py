@@ -1,16 +1,18 @@
+import re
 from setuptools import setup
 
-import snide
+init_py = open('snide/__init__.py').read()
+metadata = dict(re.findall("__([a-z]+)__ = '([^']+)'", init_py))
+metadata['doc'] = re.findall('"""(.+)"""', init_py)[0]
 
 setup(
-    name=snide.__name__,
-    version=snide.__version__,
-    description='Snide: a remark.js parser in python',
-    author='Michael Joseph',
-    author_email='michaeljoseph@gmail.com',
-    url=snide.__url__,
+    name='snide',
+    version=metadata['version'],
+    description=metadata['doc'],
+    author=metadata['author'],
+    author_email=metadata['email'],
+    url=metadata['url'],
     packages=['snide'],
-    package_dir={'snide': 'snide'},
     include_package_data=True,
     install_requires=[
         'markdown2 < 3.0.0',

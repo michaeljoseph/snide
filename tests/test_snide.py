@@ -1,6 +1,6 @@
 from . import BaseTestCase
 
-from snide.models import Deck, Slide
+from snide import Deck, Slide
 
 
 class TestDeck(BaseTestCase):
