@@ -3,6 +3,7 @@ from setuptools import setup
 
 init_py = open('snide/__init__.py').read()
 metadata = dict(re.findall("__([a-z]+)__ = '([^']+)'", init_py))
+metadata['doc'] = re.findall('"""(.+)"""', init_py)[0]
 
 setup(
     name='snide',
