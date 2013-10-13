@@ -44,7 +44,7 @@ TODO: Minimal cli to parse and display deck statistics and meta information
 
 ## Documentation
 
-[API Documentation][http://snide.rtfd.org]
+[API Documentation](http://snide.rtfd.org)
 
 ## Testing
 
