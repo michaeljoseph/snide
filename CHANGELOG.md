@@ -1,5 +1,11 @@
 # [Changelog](https://github.com/michaeljoseph/snide/releases)
 
+## [0.2.1](https://github.com/michaeljoseph/snide/compare/0.2.0...0.2.1)
+
+* [13ecd43](https://github.com/michaeljoseph/snide/commit/13ecd43) Add presentation_type attribute
+* [5d466ff](https://github.com/michaeljoseph/snide/commit/5d466ff) Fix readme link
+* [78b982c](https://github.com/michaeljoseph/snide/commit/78b982c) Fix travis build image
+
 ## [0.2.0](https://github.com/michaeljoseph/snide/compare/0.1.0...0.2.0)
 
 * [73961d0](https://github.com/michaeljoseph/snide/commit/73961d0) Read doc string
