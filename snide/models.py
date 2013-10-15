@@ -5,10 +5,11 @@ import markdown2
 
 class Deck(object):
 
-    def __init__(self, title, text):
+    def __init__(self, title, text, presentation_type=None):
         self.slides = []
         self.title = title
         self.text = text
+        self.presentation_type = presentation_type
 
         for slide in text.split('---'):
             self.slides.append(Slide(slide.lstrip()))
