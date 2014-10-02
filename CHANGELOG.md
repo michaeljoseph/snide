@@ -1,5 +1,11 @@
 # [Changelog](https://github.com/michaeljoseph/snide/releases)
 
+## [0.2.2](https://github.com/michaeljoseph/snide/compare/0.2.1...0.2.2)
+
+* [4546271](https://github.com/michaeljoseph/snide/commit/4546271) Add wheel
+* [a1f68ac](https://github.com/michaeljoseph/snide/commit/a1f68ac) Linting
+* [eb957f8](https://github.com/michaeljoseph/snide/commit/eb957f8) Expose text attribute
+
 ## [0.2.1](https://github.com/michaeljoseph/snide/compare/0.2.0...0.2.1)
 
 * [13ecd43](https://github.com/michaeljoseph/snide/commit/13ecd43) Add presentation_type attribute
