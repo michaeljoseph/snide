@@ -19,6 +19,7 @@ class Deck(object):
         return {
             'title': self.title,
             'slides': [slide.json for slide in self.slides],
+            'text': self.text,
         }
 
 
